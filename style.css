@@ -9,6 +9,8 @@
 .drinks-section {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 input {
@@ -17,7 +19,8 @@ input {
   padding: 2rem;
   margin: 3rem 2rem;
   border-radius: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  font-family: sans-serif;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
