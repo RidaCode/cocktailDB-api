@@ -30,3 +30,25 @@ function renderDrink(url, drinkName, targetSelector) {
   selector.appendChild(li).appendChild(img);
   selector.appendChild(li).appendChild(span);
 }
+
+//Search for drink by name
+const input = document.querySelector('input[type="search"]');
+input.addEventListener("input", () => {
+  let inputVal = input.value.toLowerCase();
+  if (inputVal) {
+    //hide all drinks and show only matching drinks in input, search by name
+    let drinks = document.querySelectorAll(".drinks-container li");
+    drinks.forEach((drink) => {
+      drink.style.display = "none";
+      if (drink.textContent.toLowerCase().includes(inputVal)) {
+        drink.style.display = "block";
+      }
+    });
+  } else {
+    //show all drinks
+    let drinks = document.querySelectorAll(".drinks-container li");
+    drinks.forEach((drink) => {
+      drink.style.display = "block";
+    });
+  }
+});
