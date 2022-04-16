@@ -131,7 +131,7 @@ input.addEventListener("input", () => {
   let inputVal = input.value.toLowerCase();
   if (inputVal) {
     //hide all drinks and show only matching drinks in input, search by name
-    let drinks = document.querySelectorAll(".drinks-container li");
+    let drinks = document.querySelectorAll(".flip-card");
     drinks.forEach((drink) => {
       drink.style.display = "none";
       if (drink.textContent.toLowerCase().includes(inputVal)) {
@@ -140,7 +140,7 @@ input.addEventListener("input", () => {
     });
   } else {
     //show all drinks
-    let drinks = document.querySelectorAll(".drinks-container li");
+    let drinks = document.querySelectorAll(".flip-card");
     drinks.forEach((drink) => {
       drink.style.display = "block";
     });
