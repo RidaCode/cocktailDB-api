@@ -123,8 +123,8 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic")
 
     //Toggle flipcards on click
     let flipCardSelector = document.querySelectorAll(".flip-card");
-    const mediaQueryDesktop = window.matchMedia("(min-width: 500px)"); //Desktops
-    const mediaQueryMobile = window.matchMedia("(max-width: 500px)"); //Desktops
+    const mediaQueryDesktop = window.matchMedia("(min-width: 769px)"); //Desktops
+    const mediaQueryMobile = window.matchMedia("(max-width: 480px)"); //Mobile
     flipCardSelector.forEach((card) => {
       card.addEventListener("click", (event) => {
         let backCardChildren = card.firstChild.lastChild.childNodes;

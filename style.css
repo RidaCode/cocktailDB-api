@@ -156,7 +156,7 @@ input {
 }
 
 /* on desktops ect */
-@media all and (min-width: 500px) {
+@media all and (min-width: 769px) {
   .flip-card {
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
@@ -170,7 +170,7 @@ input {
 }
 
 /* on mobile ect */
-@media all and (max-width: 500px) {
+@media all and (min-width: 320px) and (max-width: 480px) {
   .flip-card-front {
     display: flex;
   }
