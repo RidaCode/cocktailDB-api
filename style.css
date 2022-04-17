@@ -79,10 +79,13 @@ input {
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
   display: flex;
-
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.flip-card-front:hover {
+  cursor: pointer;
 }
 
 .front-drink-name {
