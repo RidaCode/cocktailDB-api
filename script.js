@@ -120,6 +120,24 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic")
       drinkBackIngredientsConatiner.appendChild(drinkBackIngredientsTitle);
       drinkBackIngredientsConatiner.appendChild(drinkBackIngredients);
     }
+
+    //Toggle flipcards on click
+    let flipCardSelector = document.querySelectorAll(".flip-card");
+    flipCardSelector.forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (card.firstChild.style.transform === "") {
+          card.firstChild.style.transform = "rotateY(180deg)";
+        }
+      });
+      //Close flipcards on scroll
+      window.addEventListener("scroll", (event) => {
+        let scrollY = this.scrollY;
+        let scrollX = this.scrollX;
+        if (scrollY || scrollX) {
+          card.firstChild.style.transform = "";
+        }
+      });
+    });
   })
   .catch((error) => {
     console.error("Error:", error);
