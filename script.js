@@ -123,17 +123,30 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic")
 
     //Toggle flipcards on click
     let flipCardSelector = document.querySelectorAll(".flip-card");
+    const mediaQueryDesktop = window.matchMedia("(min-width: 500px)"); //Desktops
+    const mediaQueryMobile = window.matchMedia("(max-width: 500px)"); //Desktops
     flipCardSelector.forEach((card) => {
       card.addEventListener("click", (event) => {
-        if (card.firstChild.style.transform === "") {
+        let backCardChildren = card.firstChild.lastChild.childNodes;
+        if (
+          card.firstChild.style.transform === "" &&
+          mediaQueryDesktop.matches
+        ) {
           card.firstChild.style.transform = "rotateY(180deg)";
+        } else if (mediaQueryMobile.matches) {
+          card.firstChild.firstChild.style.display = "none";
+          card.firstChild.lastChild.style.display = "flex";
+          for (let index = 0; index < backCardChildren.length; index++) {
+            const element = backCardChildren[index];
+            element.style.display = "block";
+          }
         }
       });
       //Close flipcards on scroll
       window.addEventListener("scroll", (event) => {
         let scrollY = this.scrollY;
         let scrollX = this.scrollX;
-        if (scrollY || scrollX) {
+        if (scrollY || (scrollX && mediaQueryDesktop.matches)) {
           card.firstChild.style.transform = "";
         }
       });
